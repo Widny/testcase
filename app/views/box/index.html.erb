@@ -1,24 +1,29 @@
 <h1>Box</h1>
 <!--<p>Find me in app/views/box/index.html.erb</p>-->
-
+<% Box.populate %>
 <table class ="table table-bordered">
 	<thead>
 		<tr>
-			<% @show_fields.each do |k| %>
+			<% Box.show_fields.each do |k| %>
 			<th><%= k %></th>
 			<%end%>
 		</tr>
 	</thead>
-	<tbody><% @box_files_info.each do |entry| %>
+	<tbody>
+		<% Box.box_files_info.each do |entry| %>
 		<tr>
-		<% @show_fields.each do |k| %>
+		<% Box.show_fields.each do |k| %>
 			<td><%= entry[k] %></td>
 		<% end %>
 	</tr>
-	<% end %>
-
+		<% end %>
 </tbody>
 </table>
 
 
-
+<!-- 
+box_content
+box_folders
+show_fields
+box_files
+box_files_info -->
